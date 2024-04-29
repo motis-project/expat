@@ -1600,7 +1600,7 @@ XML_Parse(XML_Parser parser, const char *s, int len, int isFinal)
       memcpy(buffer, end, nLeftOver);
     }
     bufferPtr = buffer;
-    bufferEnd = buffer + nLeftOver;
+    bufferEnd = buffer == NULL ? NULL : (buffer + nLeftOver);
     positionPtr = bufferPtr;
     parseEndPtr = bufferEnd;
     eventPtr = bufferPtr;
