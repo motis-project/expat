@@ -6079,7 +6079,7 @@ static void FASTCALL
 hashTableIterInit(HASH_TABLE_ITER *iter, const HASH_TABLE *table)
 {
   iter->p = table->v;
-  iter->end = iter->p + table->size;
+  iter->end = iter->p == NULL ? NULL : iter->p + table->size;
 }
 
 static NAMED * FASTCALL
